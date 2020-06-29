@@ -1174,6 +1174,9 @@ params = CGI.parse(uri.query || "")
   end
 
   def run_assets_precompile_rake_task
+    puts "-----> assets:precompile skipped."
+    return
+
     instrument 'ruby.run_assets_precompile_rake_task' do
 
       precompile = rake.task("assets:precompile")
